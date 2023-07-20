@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\Employer;
-use App\Models\JobIndustry;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreEmployerRequest;
+
 
 class RegisterController extends Controller
 {

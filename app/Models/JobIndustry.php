@@ -18,4 +18,8 @@ class JobIndustry extends Model
     public function employer() {
         return $this->hasMany(Employer::class);
     }
+
+    public function workExperience() {
+        return $this->hasMany(WorkExperience::class);
+    }
 }

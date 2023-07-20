@@ -6,9 +6,8 @@ use App\Models\Job;
 use App\Models\JobFunction;
 use App\Models\JobIndustry;
 use App\Models\JobLocation;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreJobRequest;
-use Illuminate\Cache\RedisTagSet;
 
 class JobController extends Controller
 {
@@ -17,8 +16,6 @@ class JobController extends Controller
      */
     public function index()
     {
-        // $jobs = Job::all();
-        // dd($jobs);
         return view('jobs.index')
                 ->with('locations', JobLocation::all())
                 ->with('industries', JobIndustry::all())
@@ -44,9 +41,11 @@ class JobController extends Controller
     {
         $formFields = $request->validated();
 
+        $formFields['employer_id'] = Auth::user()->id;
+
         Job::create($formFields);
 
-        return redirect()->route('jobs.index');
+        return redirect()->route('jobs.index')->with('success_message', 'Job posted successfully!');
     }
 
     /**

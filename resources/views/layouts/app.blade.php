@@ -18,18 +18,18 @@
         @livewireStyles
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-white">
+        <div class="min-h-screen bg-white flex flex-col">
             @include('layouts.navigation')
 
 
             <!-- Page Content -->
-            <main>
+            <main class="grow">
                 {{ $slot }}
             </main>
 
             <!-- Footer -->
             <div class="w-full bg-white border-t-2 border-gray-200">
-                <div class="w-11/12 mx-auto flex flex-col pt-12">
+                <div class="w-11/12 mx-auto flex flex-col pt-6">
                     <div class="flex flex-col flex-wrap justify-between items-center w-full md:flex-row">
                         <a class="text-sm text-orange-600 py-2" href="">About</a>
                         <span class="hidden text-gray-300 md:block">|</span>
@@ -47,10 +47,10 @@
                     </div>
             
                     <div class="flex flex-row justify-center md:justify-start">
-                        <span class="pt-5 text-sm text-gray-700">Follow us On: </span>
+                        <span class="pt-3 text-sm text-gray-700">Follow us On: </span>
                     </div>
             
-                    <div class="flex flex-row justify-center md:justify-start items-centre py-5 w-full">
+                    <div class="flex flex-row justify-center md:justify-start items-centre py-3 w-full">
                         <a class="mr-6" href="">
                             <img src="../../images/twitter.png" alt="twitter" class="w-6 h-6">
                         </a>
@@ -71,7 +71,7 @@
                         </a>
                     </div>
             
-                    <div class="flex flex-row justify-center items-center py-5 w-full border-t-2 border-gray-300">
+                    <div class="flex flex-row justify-center items-center py-2 w-full border-t-2 border-gray-300">
                         <span class="pr-2">
                             <img src="../../images/copyright.png" alt="copyright" class="w-4 h-4">
                         </span>
@@ -82,6 +82,16 @@
                 </div>
             </div>
         </div>
+
+       
+        <x-notification-status />
+
+        @if(session()->has('success_message'))
+            <x-notification-status 
+                redirect="true"
+                messageToDisplay="{{ (session('success_message')) }}"
+            />
+        @endif
         @livewireScripts
     </body>
 </html>

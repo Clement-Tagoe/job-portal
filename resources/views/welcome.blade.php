@@ -167,7 +167,7 @@
                 <div class="flex flex-col justify-center border border-gray-300 hover:border-gray-600 ml-3 mt-3 space-y-2 w-72 h-40 rounded-lg">
                     <h4 class="font-bold">Admin & Office</h4>
                     <p class="text-gray-400">30 Jobs</p>
-                    <a class="flex items-center justify-center text-orange-600 cursor-pointer">
+                    <a href="#" class="flex items-center justify-center text-orange-600 cursor-pointer">
                         Explore Jobs
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
@@ -209,7 +209,7 @@
                 </div>
             </div>
             <div class="mt-12 mb-8">
-                <a href="#" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-md">
+                <a href="{{route('jobs.index')}}" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-md">
                     Explore All Jobs
                 </a>
             </div>

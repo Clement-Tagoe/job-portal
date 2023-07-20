@@ -26,7 +26,31 @@ class JobLocationSeeder extends Seeder
         ]);
 
         JobLocation::create([
+            'name' => 'Central Region'
+        ]);
+
+        JobLocation::create([
+            'name' => 'Brong-Ahafo Region'
+        ]);
+
+        JobLocation::create([
+            'name' => 'Eastern Region'
+        ]);
+
+        JobLocation::create([
             'name' => 'Tamale & Northern Region'
+        ]);
+
+        JobLocation::create([
+            'name' => 'Upper East Region'
+        ]);
+
+        JobLocation::create([
+            'name' => 'Upper West Region'
+        ]);
+
+        JobLocation::create([
+            'name' => 'Volta Region'
         ]);
 
         JobLocation::create([

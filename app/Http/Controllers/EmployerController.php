@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Job;
 use App\Models\Employer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EmployerController extends Controller
 {
@@ -29,10 +29,12 @@ class EmployerController extends Controller
     /**
      * Show employers dashboard.
      */
-    public function dashboard(Employer $employer)
+    public function dashboard()
     {
+        $employer = Auth::user();
+
         return view('employer.dashboard')
-                    ->with('employer', $employer);
+                ->with('employer', $employer);             
     }
 
     /**
@@ -56,7 +58,8 @@ class EmployerController extends Controller
      */
     public function edit(Employer $employer)
     {
-        //
+        return view('employer.employer-edit')
+                    ->with('employer', $employer);
     }
 
     /**

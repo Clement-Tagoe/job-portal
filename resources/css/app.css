@@ -2,10 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .custom-ul > ul {
     color: rgb(107 114 128);
     margin-left: 1.25rem;
     list-style-type: disc;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+.authentication-dropdown {
+    animation: slideInFromRight 0.5s ease-in;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }

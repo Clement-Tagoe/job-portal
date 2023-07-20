@@ -4,7 +4,7 @@
         <div class="rounded-lg bg-white p-4 shadow-xs">
             <div class="mb-8 w-full overflow-hidden rounded-lg border shadow-xs">
                 <div class="w-full overflow-x-auto">
-                    <table class="w-full whitespace-no-wrap">
+                    <table class="w-full h-full whitespace-no-wrap">
                         <thead>
                             <tr class="border-b bg-gray-50 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
                                 <th class="px-4 py-3">Company Name</th>
@@ -19,7 +19,7 @@
                         <tbody class="bg-white divide-y">
                             @forelse($employers as $employer)
                                 <tr class="text-gray-700">
-                                    <td class="px-4 py-3 text-sm"><a href="#" class="hover:text-orange-600">{{$employer->company_name}}</a></td>
+                                    <td class="px-4 py-3 text-sm"><a href="{{route('employers.dashboard', $employer)}}" class="hover:text-orange-600">{{$employer->company_name}}</a></td>
                                     </td>
                                     <td class="px-4 py-3 text-sm">
                                        {{$employer->contact_person}} 

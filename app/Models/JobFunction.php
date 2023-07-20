@@ -13,4 +13,12 @@ class JobFunction extends Model
     public function job() {
         return $this->hasMany(Job::class);
     }
+
+    public function user() {
+        return $this->hasMany(User::class);
+    }
+
+    public function workExperience() {
+        return $this->hasMany(WorkExperience::class);
+    }
 }

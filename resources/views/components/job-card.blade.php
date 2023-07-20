@@ -2,7 +2,7 @@
 
 <div class="relative w-full border border-gray-300 hover:border-gray-400 hover:drop-shadow-sm rounded-lg p-5 mb-8">
         <h1 class="font-semibold text-lg"><a href="{{route('jobs.show', $job)}}">{{$job->title}}</a></h1>
-        <h4 class="text-orange-600">Nestle Ghana Limited</h4>
+        <h4 class="text-orange-600">{{$job->employer->company_name}}</h4>
         <span class="inline-block bg-green-100 text-green-500 px-3 py-1 rounded-lg mt-3 mr-1">{{$job->type}}</span>
         <span class="inline-block bg-yellow-100 text-yellow-600 px-3 py-1 rounded-lg mt-1">{{$job->jobFunction->name}}</span>
         <div class="absolute flex flex-col top-6 right-6">

@@ -43,7 +43,7 @@
                 <div class="flex flex-col-reverse md:flex-row p-5">
                     <div class="w-full md:w-8/12 mt-3 md:mt-0">
                         <h1 class="text-xl font-semibold mb-3">{{$job->title}}</h1>
-                        <h4 class="text-orange-600">Nestle Ghana Limited</h4>
+                        <h4 class="text-orange-600">{{$job->employer->company_name}}</h4>
                         <h5 class="mb-4">{{$job->jobFunction->name}}</h5>
                         <div class="mb-3">
                             <span class="inline-block bg-green-100 text-green-500 px-3 py-1 rounded-md mr-1">{{$job->type}}</span>
@@ -60,7 +60,7 @@
                         
                     </div>
                     <div class="w-full md:w-4/12 flex md:justify-end">
-                        <img class="w-40 h-40" src="../images/nestle.jpg" alt="nestle-ghana-limited">
+                        <img class="w-40 h-40" src="{{asset('storage/' . $job->employer->company_logo)}}" alt="nestle-ghana-limited">
                     </div>
                 </div>
 
@@ -156,11 +156,6 @@
                         </a>
                     </div>
                 </form>    
-            </div>
-            <div class="mt-10">
-                <a href="{{route('jobs.edit', $job)}}" class="text-white px-6 py-2 bg-orange-600 hover:bg-orange-700 rounded-md">
-                    Edit
-                </a>
             </div>
         </div>
     </div>

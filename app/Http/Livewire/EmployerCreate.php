@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Models\Employer;
 use App\Models\JobIndustry;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class EmployerCreate extends Component
 {
@@ -112,6 +113,9 @@ class EmployerCreate extends Component
             ]);
         }
 
+        //Hash Password
+        $this->password = bcrypt($this->password);
+
         $employer = Employer::create([
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
@@ -132,6 +136,11 @@ class EmployerCreate extends Component
             'country' => $this->country,
             'address' => $this->address,
         ]);
+
+        //Login
+        Auth::guard('employer')->login($employer);
+
+        $this->emit('accountCreated', 'Your account has been created successfully.');
 
         return redirect()->route('employers.dashboard', $employer);
     }
